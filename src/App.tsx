@@ -20,38 +20,58 @@ function App() {
 
       <section className="w-7/12 mx-auto my-4">
         <h2 className="font-semibold text-2xl">Projects</h2>
-        <div className="flex flex-row gap-8 my-2">
+        <div className="grid grid-cols-3 grid-rows-2 gap-4 my-2">
           <Card
-            title="Compath"
+            title="Compath (now)"
             description="Web-app with resume classification for CPE students to recommend their career path"
             bannerImage="compath-banner.png"
           >
           </Card>
           <Card
-            title="Overvoice"
+            title="Haunted Story (2023)"
+            description="Web-app for associate with storytelling game in real life"
+            bannerImage="haunted-story-banner.png"
+          >
+          </Card>
+          <Card
+            title="Overvoice (2022)"
             description="Entertainment Dubbing App for blind person (Android)"
             bannerImage="overvoice-banner.png"
           >
           </Card>
-        </div>
-        <div className="flex flex-row gap-8 my-4">
           <Card
-            title="TyBunTee"
+            title="TyBunTee (2023)"
             description="Educational game for teaching pointer in C language"
             bannerImage="tybuntee-banner.png"
           >
           </Card>
-          {/* <Card
-            title="Run For Blood"
+          <Card
+            title="Run For Blood (2022)"
             description="Endless runner game for blood donation campaign"
             bannerImage="overvoice-banner.png"
           >
-          </Card> */}
+          </Card>
         </div>
       </section>
 
       <section className="w-7/12 mx-auto my-4">
-        <h2 className="font-semibold text-2xl">Experiences & Awards</h2>
+        <h2 className="font-semibold text-2xl">Experiences</h2>
+        <div className="flex flex-row mt-2">
+          <img src="ais-icon.png" alt="AIS icon" className="w-[45px] h-[20px] mt-2 mr-2" />
+          <div className="flex flex-col">
+            <div className="mb-2">
+              <h3>Full-Stack Developer</h3>
+              <p>Advanced Info Service Public Company Limited (AIS) · Internship</p>
+              <p>Jun - Aug 2023 · 10 weeks</p>
+            </div>
+            <p>- cooperate in development team from AIS x ODDS to redesign and develop the device selling web application for AIS shop.</p>
+            <p>- responsible to develop the user interface with Angular and restructure the API with Express.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-7/12 mx-auto my-4">
+        <h2 className="font-semibold text-2xl">Awards</h2>
       </section>
 
       <section className="w-7/12 mx-auto my-4">
