@@ -1,4 +1,5 @@
 import Card from "./components/Card"
+import Timeline from "./components/Timeline"
 
 function App() {
 
@@ -18,44 +19,39 @@ function App() {
         </div>
       </section>
 
-      <section className="w-7/12 mx-auto my-4">
+      <section className="w-7/12 mx-auto my-8">
         <h2 className="font-bold text-2xl">Projects</h2>
         <div className="grid grid-cols-3 grid-rows-2 gap-4 my-2">
           <Card
             title="Compath (now)"
             description="Web-app with resume classification for CPE students to recommend their career path"
             bannerImage="compath-banner.png"
-          >
-          </Card>
+          />
           <Card
             title="Haunted Story (2023)"
             description="Web-app for associate with storytelling game in real life"
             bannerImage="haunted-story-banner.png"
-          >
-          </Card>
+          />
           <Card
             title="Overvoice (2022)"
             description="Entertainment Dubbing App for blind person (Android)"
             bannerImage="overvoice-banner.png"
-          >
+          />
 
-          </Card>
           <Card
             title="TyBunTee (2023)"
             description="Educational game for teaching pointer in C language"
             bannerImage="tybuntee-banner.png"
-          >
-          </Card>
+          />
           <Card
             title="Run For Blood (2022)"
             description="Endless runner game for blood donation campaign"
             bannerImage="overvoice-banner.png"
-          >
-          </Card>
+          />
         </div>
       </section>
 
-      <section className="w-7/12 mx-auto my-4">
+      <section className="w-7/12 mx-auto my-8">
         <h2 className="font-bold text-2xl">Experiences</h2>
         <div className="flex flex-col mt-2">
 
@@ -76,11 +72,21 @@ function App() {
         </div>
       </section>
 
-      <section className="w-7/12 mx-auto my-4">
-        <h2 className="font-bold text-2xl">Awards</h2>
+      <section className="w-7/12 mx-auto my-8">
+        <h2 className="font-bold text-2xl">Awards & Certificates</h2>
+        <div className="-my-2">
+          <Timeline
+            title="The Winner & Best Design in New Founder 2023 by Young Entrepreneur Assembly Hub (YEAH)"
+            description="responsible as tech design in team members"
+          />
+          <Timeline
+            title="Unity Certified User: Programmer (2022)"
+            description="passed an exam of basic C# language in Unity by Unity official"
+          />
+        </div>
       </section>
 
-      <section className="w-7/12 mx-auto my-4">
+      <section className="w-7/12 mx-auto my-8">
         <h2 className="font-bold text-2xl">Skills</h2>
       </section>
 
