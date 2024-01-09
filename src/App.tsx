@@ -118,7 +118,7 @@ function App() {
   return (
     <main className="font-medium text-dark-blue">
       <section className="min-h-64 flex">
-        <div className="flex flex-row justify-between items-center align-middle w-7/12 m-auto">
+        <div className="flex flex-col lg:flex-row justify-between items-center align-middle lg:w-7/12 m-auto">
 
           <div className="flex flex-col">
             <p>Hello world, I am</p>
@@ -131,9 +131,9 @@ function App() {
         </div>
       </section>
 
-      <section className="w-7/12 mx-auto my-8">
+      <section className="lg:w-7/12 mx-auto my-8">
         <h2 className="font-bold text-2xl">Projects</h2>
-        <div className="grid grid-cols-3 gap-4 my-2">
+        <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-4 my-2">
           {cardLists.map((card, idx) => {
             return (
               <Card
@@ -147,7 +147,7 @@ function App() {
         </div>
       </section>
 
-      <section className="w-7/12 mx-auto my-8">
+      <section className="lg:w-7/12 mx-auto my-8">
         <h2 className="font-bold text-2xl">Experiences</h2>
         <div className="flex flex-col mt-2">
 
@@ -168,7 +168,7 @@ function App() {
         </div>
       </section>
 
-      <section className="w-7/12 mx-auto my-8">
+      <section className="lg:w-7/12 mx-auto my-8">
         <h2 className="font-bold text-2xl">Awards & Certificates</h2>
         <div className="-my-2">
           <Timeline
@@ -182,7 +182,7 @@ function App() {
         </div>
       </section>
 
-      <section className="w-7/12 mx-auto my-8">
+      <section className="lg:w-7/12 mx-auto my-8">
         <h2 className="font-bold text-2xl mb-2">Skills</h2>
         <h3 className="font-semibold text-lg mb-2">Language</h3>
         <div className="grid grid-cols-6 gap-4 items-center w-1/2 mb-2">
@@ -202,6 +202,9 @@ function App() {
         </div>
       </section>
 
+      <footer className="flex flex-row justify-center bg-primary text-white mt-4 p-6">
+        Napat Wareedee
+      </footer>
     </main>
   )
 }
