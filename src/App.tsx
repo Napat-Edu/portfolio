@@ -1,7 +1,119 @@
 import Card from "./components/Card"
 import Timeline from "./components/Timeline"
 
+interface ICardLists {
+  title: string;
+  description: string;
+  bannerImage: string;
+}
+
+interface IImageList {
+  src: string;
+  alt: string;
+}
+
 function App() {
+  const cardLists: ICardLists[] = [
+    {
+      title: "Compath (now)",
+      description: "Web-app with resume classification for CPE students to recommend their career path",
+      bannerImage: "/banners/compath-banner.png"
+    },
+    {
+      title: "Haunted Story (2023)",
+      description: "Web-app for associate with storytelling game in real life",
+      bannerImage: "/banners/haunted-story-banner.png"
+    },
+    {
+      title: "Overvoice (2022)",
+      description: "Entertainment Dubbing App for blind person (Android)",
+      bannerImage: "/banners/overvoice-banner.png"
+    },
+    {
+      title: "TyBunTee (2023)",
+      description: "Educational game for teaching pointer in C language",
+      bannerImage: "/banners/tybuntee-banner.png"
+    },
+    {
+      title: "Run For Blood (2022)",
+      description: "Endless runner game for blood donation campaign",
+      bannerImage: "/banners/overvoice-banner.png"
+    }
+  ];
+
+  const languageLists: IImageList[] = [
+    {
+      src: "/icons/js-icon.png",
+      alt: "js-icon"
+    },
+    {
+      src: "/icons/ts-icon.png",
+      alt: "ts-icon"
+    },
+    {
+      src: "/icons/html-icon.png",
+      alt: "html-icon"
+    },
+    {
+      src: "/icons/css-icon.png",
+      alt: "css-icon"
+    },
+    {
+      src: "/icons/c-icon.png",
+      alt: "c-icon"
+    },
+    {
+      src: "/icons/c-sharp-icon.png",
+      alt: "c-sharp-icon"
+    },
+  ];
+
+  const toolLists: IImageList[] = [
+    {
+      src: "/icons/react-icon.png",
+      alt: "react-icon"
+    },
+    {
+      src: "/icons/next-icon.png",
+      alt: "next-icon"
+    },
+    {
+      src: "/icons/angular-icon.png",
+      alt: "angular-icon"
+    },
+    {
+      src: "/icons/express-icon.png",
+      alt: "express-icon"
+    },
+    {
+      src: "/icons/nest-icon.png",
+      alt: "nest-icon"
+    },
+    {
+      src: "/icons/tailwind-icon.png",
+      alt: "tailwind-icon"
+    },
+    {
+      src: "/icons/gcp-icon.png",
+      alt: "gcp-icon"
+    },
+    {
+      src: "/icons/socket-icon.png",
+      alt: "socket-icon"
+    },
+    {
+      src: "/icons/mysql-icon.png",
+      alt: "mysql-icon"
+    },
+    {
+      src: "/icons/mongo-icon.png",
+      alt: "mongo-icon"
+    },
+    {
+      src: "/icons/unity-icon.png",
+      alt: "unity-icon"
+    },
+  ];
 
   return (
     <main className="font-medium text-dark-blue">
@@ -21,33 +133,17 @@ function App() {
 
       <section className="w-7/12 mx-auto my-8">
         <h2 className="font-bold text-2xl">Projects</h2>
-        <div className="grid grid-cols-3 grid-rows-2 gap-4 my-2">
-          <Card
-            title="Compath (now)"
-            description="Web-app with resume classification for CPE students to recommend their career path"
-            bannerImage="/banners/compath-banner.png"
-          />
-          <Card
-            title="Haunted Story (2023)"
-            description="Web-app for associate with storytelling game in real life"
-            bannerImage="/banners/haunted-story-banner.png"
-          />
-          <Card
-            title="Overvoice (2022)"
-            description="Entertainment Dubbing App for blind person (Android)"
-            bannerImage="/banners/overvoice-banner.png"
-          />
-
-          <Card
-            title="TyBunTee (2023)"
-            description="Educational game for teaching pointer in C language"
-            bannerImage="/banners/tybuntee-banner.png"
-          />
-          <Card
-            title="Run For Blood (2022)"
-            description="Endless runner game for blood donation campaign"
-            bannerImage="/banners/overvoice-banner.png"
-          />
+        <div className="grid grid-cols-3 gap-4 my-2">
+          {cardLists.map((card, idx) => {
+            return (
+              <Card
+                key={"project-card" + idx}
+                title={card.title}
+                description={card.description}
+                bannerImage={card.bannerImage}
+              />
+            );
+          })}
         </div>
       </section>
 
@@ -65,7 +161,7 @@ function App() {
           </div>
 
           <div>
-            <p className="font-normal">- cooperate in development team from AIS x ODDS to redesign and develop the device selling web application for AIS shop.</p>
+            <p className="font-normal">- cooperate in development team from <strong className=" font-semibold">AIS x ODDS</strong> to redesign and develop the device selling web application for AIS shop.</p>
             <p className="font-normal">- responsible to develop the user interface with Angular and restructure API with Express.</p>
           </div>
 
@@ -87,7 +183,23 @@ function App() {
       </section>
 
       <section className="w-7/12 mx-auto my-8">
-        <h2 className="font-bold text-2xl">Skills</h2>
+        <h2 className="font-bold text-2xl mb-2">Skills</h2>
+        <h3 className="font-semibold text-lg mb-2">Language</h3>
+        <div className="grid grid-cols-6 gap-4 items-center w-1/2 mb-2">
+          {languageLists.map((language) => {
+            return (
+              <img src={language.src} alt={language.alt} />
+            );
+          })}
+        </div>
+        <h3 className="font-semibold text-lg mb-2">Tools</h3>
+        <div className="grid grid-cols-6 gap-4 items-center w-1/2 mb-2">
+          {toolLists.map((tool) => {
+            return (
+              <img src={tool.src} alt={tool.alt} />
+            );
+          })}
+        </div>
       </section>
 
     </main>
