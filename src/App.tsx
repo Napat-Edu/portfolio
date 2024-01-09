@@ -25,28 +25,28 @@ function App() {
           <Card
             title="Compath (now)"
             description="Web-app with resume classification for CPE students to recommend their career path"
-            bannerImage="compath-banner.png"
+            bannerImage="/banners/compath-banner.png"
           />
           <Card
             title="Haunted Story (2023)"
             description="Web-app for associate with storytelling game in real life"
-            bannerImage="haunted-story-banner.png"
+            bannerImage="/banners/haunted-story-banner.png"
           />
           <Card
             title="Overvoice (2022)"
             description="Entertainment Dubbing App for blind person (Android)"
-            bannerImage="overvoice-banner.png"
+            bannerImage="/banners/overvoice-banner.png"
           />
 
           <Card
             title="TyBunTee (2023)"
             description="Educational game for teaching pointer in C language"
-            bannerImage="tybuntee-banner.png"
+            bannerImage="/banners/tybuntee-banner.png"
           />
           <Card
             title="Run For Blood (2022)"
             description="Endless runner game for blood donation campaign"
-            bannerImage="overvoice-banner.png"
+            bannerImage="/banners/overvoice-banner.png"
           />
         </div>
       </section>
