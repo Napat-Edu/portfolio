@@ -5,6 +5,11 @@ interface ICardProps {
     title: string;
     description: string;
     bannerImage: string;
+
+    sampleVideos?: any[];
+    sourceCode?: string[];
+    sourceFile?: string;
+    webLink?: string;
 }
 
 function Card(props: ICardProps) {
@@ -28,7 +33,16 @@ function Card(props: ICardProps) {
                     <p className="text-gray-700 text-base">{props.description}</p>
                 </div>
             </div>
-            {isModalOpen ? <Dialog closeModal={closeModal} /> : <></>}
+
+            {isModalOpen ?
+                <Dialog
+                    closeModal={closeModal}
+                    title={props.title}
+                    bannerImage={props.bannerImage}
+                    webLink={props.webLink}
+                    sourceCode={props.sourceCode} /> :
+                <></>}
+
             <button className="bg-primary rounded-lg text-white px-4 py-2 mx-4 mt-2 mb-4" onClick={openModal}>More Details</button>
         </div>
     );

@@ -83,6 +83,8 @@ function App() {
                 title={card.title}
                 description={card.description}
                 bannerImage={card.bannerImage}
+                webLink={card.webLink}
+                sourceCode={card.sourceCode}
               />
             );
           })}
