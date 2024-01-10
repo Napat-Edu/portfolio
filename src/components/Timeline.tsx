@@ -6,7 +6,7 @@ interface ITimelineProps {
 function Timeline(props: ITimelineProps) {
 
     return (
-        <div className="relative sm:pl-10 py-6 group">
+        <div className="relative pl-10 py-6 group">
             <div className="
               flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden 
               before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px 

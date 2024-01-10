@@ -177,7 +177,7 @@ function App() {
         </div>
       </section>
 
-      <section className="lg:w-7/12 mx-auto my-8">
+      <section className="w-4/5 lg:w-7/12 mx-auto my-8">
         <h2 className="font-bold text-2xl">Projects</h2>
         <div className="flex flex-row justify-center gap-4">
           {projectButtonLists.map((projectButton, idx) => {
@@ -192,7 +192,7 @@ function App() {
             );
           })}
         </div>
-        <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-4 my-2">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 my-2">
           {projectLists.map((card, idx) => {
             return (
               <Card
@@ -206,7 +206,7 @@ function App() {
         </div>
       </section>
 
-      <section className="lg:w-7/12 mx-auto my-8">
+      <section className="w-4/5 lg:w-7/12 mx-auto my-8">
         <h2 className="font-bold text-2xl">Experiences</h2>
         <div className="flex flex-col mt-2">
 
@@ -227,7 +227,7 @@ function App() {
         </div>
       </section>
 
-      <section className="lg:w-7/12 mx-auto my-8">
+      <section className="w-4/5 lg:w-7/12 mx-auto lg:my-8">
         <h2 className="font-bold text-2xl">Awards & Certificates</h2>
         <div className="-my-2">
           <Timeline
@@ -241,10 +241,10 @@ function App() {
         </div>
       </section>
 
-      <section className="lg:w-7/12 mx-auto my-8">
+      <section className="w-4/5 lg:w-7/12 mx-auto my-8">
         <h2 className="font-bold text-2xl mb-2">Skills</h2>
         <h3 className="font-semibold text-lg mb-2">Language</h3>
-        <div className="grid grid-cols-6 gap-4 items-center w-1/2 mb-2">
+        <div className="grid grid-cols-3 lg:grid-cols-6 mx-auto lg:mx-0 gap-4 items-center w-1/2 mb-2">
           {languageLists.map((language, idx) => {
             return (
               <img src={language.src} alt={language.alt} key={"language-list-" + idx} />
@@ -252,7 +252,10 @@ function App() {
           })}
         </div>
         <h3 className="font-semibold text-lg mb-2">Tools</h3>
-        <div className="grid grid-cols-6 gap-4 items-center w-1/2 mb-2">
+        <div
+          className="grid grid-cols-3 items-center w-4/6 mx-auto mb-2 gap-4
+          lg:grid-cols-11 lg:w-full"
+        >
           {toolLists.map((tool, idx) => {
             return (
               <img src={tool.src} alt={tool.alt} key={"tool-list-" + idx} />
@@ -261,8 +264,19 @@ function App() {
         </div>
       </section>
 
-      <footer className="flex flex-row justify-center bg-primary text-white mt-4 p-6">
-        Napat Wareedee
+      <footer className="flex flex-col gap-4 justify-center items-center bg-primary text-white mt-4 p-6">
+        <p>Napat Wareedee</p>
+        <div className="flex flex-row gap-2">
+          <a href="https://www.linkedin.com/in/napat-wareedee-5b10a5254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" className="w-8 h-8">
+            <img src="/icons/linkedin-icon.png" alt="linkedin-icon" />
+          </a>
+          <a href="https://github.com/Napat-Edu" target="_blank" className="w-8 h-8">
+            <img src="/icons/github-icon.png" alt="github-icon" />
+          </a>
+          <a href="mailto:napat.wrd@gmail.com" className="w-8 h-8">
+            <img src="/icons/email-icon.png" alt="email-icon" />
+          </a>
+        </div>
       </footer>
     </main>
   )
