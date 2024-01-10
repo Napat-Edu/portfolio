@@ -37,7 +37,7 @@ function App() {
     {
       title: "Run For Blood (2022)",
       description: "Endless runner game for blood donation campaign",
-      bannerImage: "/banners/overvoice-banner.png"
+      bannerImage: "/banners/run-for-blood-banner.png"
     }
   ];
 
