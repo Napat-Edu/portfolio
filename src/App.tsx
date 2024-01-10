@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Card from "./components/Card"
 import Timeline from "./components/Timeline"
 
@@ -7,13 +8,20 @@ interface ICardLists {
   bannerImage: string;
 }
 
-interface IImageList {
+interface IImageLists {
   src: string;
   alt: string;
 }
 
+interface IButton {
+  title: string;
+  isActive: boolean;
+  projects: ICardLists[];
+}
+
 function App() {
-  const cardLists: ICardLists[] = [
+
+  const webappLists: ICardLists[] = [
     {
       title: "Compath (now)",
       description: "Web-app with resume classification for CPE students to recommend their career path",
@@ -29,6 +37,9 @@ function App() {
       description: "Entertainment Dubbing App for blind person (Android)",
       bannerImage: "/banners/overvoice-banner.png"
     },
+  ];
+
+  const gameLists: ICardLists[] = [
     {
       title: "TyBunTee (2023)",
       description: "Educational game for teaching pointer in C language",
@@ -41,7 +52,7 @@ function App() {
     }
   ];
 
-  const languageLists: IImageList[] = [
+  const languageLists: IImageLists[] = [
     {
       src: "/icons/js-icon.png",
       alt: "js-icon"
@@ -68,7 +79,7 @@ function App() {
     },
   ];
 
-  const toolLists: IImageList[] = [
+  const toolLists: IImageLists[] = [
     {
       src: "/icons/react-icon.png",
       alt: "react-icon"
@@ -115,6 +126,41 @@ function App() {
     },
   ];
 
+  const [projectButtonLists, setProjectButtonLists] = useState([
+    {
+      title: "Web",
+      isActive: true,
+      projects: webappLists
+    },
+    {
+      title: "Game",
+      isActive: false,
+      projects: gameLists
+    }
+  ]);
+
+  const [projectLists, setProjectLists] = useState(webappLists);
+
+  const handleClickProject = (selectedButton: IButton) => {
+    const x = projectButtonLists.map((projectButton) => {
+      if (projectButton.title !== selectedButton.title) {
+        return {
+          ...projectButton,
+          isActive: false
+        };
+      } else {
+        return {
+          ...projectButton,
+          isActive: true
+        }
+      }
+    });
+    console.log(x);
+
+    setProjectButtonLists(x);
+    setProjectLists(selectedButton.projects);
+  }
+
   return (
     <main className="font-medium text-dark-blue">
       <section className="min-h-64 flex">
@@ -133,8 +179,21 @@ function App() {
 
       <section className="lg:w-7/12 mx-auto my-8">
         <h2 className="font-bold text-2xl">Projects</h2>
+        <div className="flex flex-row justify-center gap-4">
+          {projectButtonLists.map((projectButton, idx) => {
+            return (
+              <button
+                key={"project-type-btn-" + idx}
+                className={`border-2 rounded-xl px-4 ${projectButton.isActive === true ? "text-slate-800 border-slate-700" : "text-slate-400 border-slate-300"}`}
+                onClick={() => { handleClickProject(projectButton) }}
+              >
+                {projectButton.title}
+              </button>
+            );
+          })}
+        </div>
         <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-4 my-2">
-          {cardLists.map((card, idx) => {
+          {projectLists.map((card, idx) => {
             return (
               <Card
                 key={"project-card" + idx}
@@ -186,17 +245,17 @@ function App() {
         <h2 className="font-bold text-2xl mb-2">Skills</h2>
         <h3 className="font-semibold text-lg mb-2">Language</h3>
         <div className="grid grid-cols-6 gap-4 items-center w-1/2 mb-2">
-          {languageLists.map((language) => {
+          {languageLists.map((language, idx) => {
             return (
-              <img src={language.src} alt={language.alt} />
+              <img src={language.src} alt={language.alt} key={"language-list-" + idx} />
             );
           })}
         </div>
         <h3 className="font-semibold text-lg mb-2">Tools</h3>
         <div className="grid grid-cols-6 gap-4 items-center w-1/2 mb-2">
-          {toolLists.map((tool) => {
+          {toolLists.map((tool, idx) => {
             return (
-              <img src={tool.src} alt={tool.alt} />
+              <img src={tool.src} alt={tool.alt} key={"tool-list-" + idx} />
             );
           })}
         </div>
