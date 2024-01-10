@@ -1,17 +1,8 @@
 import { useState } from "react";
 import Card from "./components/Card"
 import Timeline from "./components/Timeline"
-
-interface ICardLists {
-  title: string;
-  description: string;
-  bannerImage: string;
-}
-
-interface IImageLists {
-  src: string;
-  alt: string;
-}
+import { ICardLists, gameLists, webappLists } from "./items/CardList";
+import { languageLists, toolLists } from "./items/ImageList";
 
 interface IButton {
   title: string;
@@ -20,111 +11,6 @@ interface IButton {
 }
 
 function App() {
-
-  const webappLists: ICardLists[] = [
-    {
-      title: "Compath (now)",
-      description: "Web-app with resume classification for CPE students to recommend their career path",
-      bannerImage: "/banners/compath-banner.png"
-    },
-    {
-      title: "Haunted Story (2023)",
-      description: "Web-app for associate with storytelling game in real life",
-      bannerImage: "/banners/haunted-story-banner.png"
-    },
-    {
-      title: "Overvoice (2022)",
-      description: "Entertainment Dubbing App for blind person (Android)",
-      bannerImage: "/banners/overvoice-banner.png"
-    },
-  ];
-
-  const gameLists: ICardLists[] = [
-    {
-      title: "TyBunTee (2023)",
-      description: "Educational game for teaching pointer in C language",
-      bannerImage: "/banners/tybuntee-banner.png"
-    },
-    {
-      title: "Run For Blood (2022)",
-      description: "Endless runner game for blood donation campaign",
-      bannerImage: "/banners/run-for-blood-banner.png"
-    }
-  ];
-
-  const languageLists: IImageLists[] = [
-    {
-      src: "/icons/js-icon.png",
-      alt: "js-icon"
-    },
-    {
-      src: "/icons/ts-icon.png",
-      alt: "ts-icon"
-    },
-    {
-      src: "/icons/html-icon.png",
-      alt: "html-icon"
-    },
-    {
-      src: "/icons/css-icon.png",
-      alt: "css-icon"
-    },
-    {
-      src: "/icons/c-icon.png",
-      alt: "c-icon"
-    },
-    {
-      src: "/icons/c-sharp-icon.png",
-      alt: "c-sharp-icon"
-    },
-  ];
-
-  const toolLists: IImageLists[] = [
-    {
-      src: "/icons/react-icon.png",
-      alt: "react-icon"
-    },
-    {
-      src: "/icons/next-icon.png",
-      alt: "next-icon"
-    },
-    {
-      src: "/icons/angular-icon.png",
-      alt: "angular-icon"
-    },
-    {
-      src: "/icons/express-icon.png",
-      alt: "express-icon"
-    },
-    {
-      src: "/icons/nest-icon.png",
-      alt: "nest-icon"
-    },
-    {
-      src: "/icons/tailwind-icon.png",
-      alt: "tailwind-icon"
-    },
-    {
-      src: "/icons/gcp-icon.png",
-      alt: "gcp-icon"
-    },
-    {
-      src: "/icons/socket-icon.png",
-      alt: "socket-icon"
-    },
-    {
-      src: "/icons/mysql-icon.png",
-      alt: "mysql-icon"
-    },
-    {
-      src: "/icons/mongo-icon.png",
-      alt: "mongo-icon"
-    },
-    {
-      src: "/icons/unity-icon.png",
-      alt: "unity-icon"
-    },
-  ];
 
   const [projectButtonLists, setProjectButtonLists] = useState([
     {
@@ -142,7 +28,7 @@ function App() {
   const [projectLists, setProjectLists] = useState(webappLists);
 
   const handleClickProject = (selectedButton: IButton) => {
-    const x = projectButtonLists.map((projectButton) => {
+    setProjectButtonLists(projectButtonLists.map((projectButton) => {
       if (projectButton.title !== selectedButton.title) {
         return {
           ...projectButton,
@@ -154,10 +40,7 @@ function App() {
           isActive: true
         }
       }
-    });
-    console.log(x);
-
-    setProjectButtonLists(x);
+    }));
     setProjectLists(selectedButton.projects);
   }
 

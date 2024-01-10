@@ -1,3 +1,6 @@
+import { useState } from "react";
+import Dialog from "./Dialog";
+
 interface ICardProps {
     title: string;
     description: string;
@@ -5,6 +8,16 @@ interface ICardProps {
 }
 
 function Card(props: ICardProps) {
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
 
     return (
         <div className="max-w-72 rounded-lg overflow-hidden shadow-md flex flex-col justify-between mx-auto">
@@ -15,7 +28,8 @@ function Card(props: ICardProps) {
                     <p className="text-gray-700 text-base">{props.description}</p>
                 </div>
             </div>
-            <button className="bg-primary rounded-lg text-white px-4 py-2 mx-4 mt-2 mb-4">More Details</button>
+            {isModalOpen ? <Dialog closeModal={closeModal} /> : <></>}
+            <button className="bg-primary rounded-lg text-white px-4 py-2 mx-4 mt-2 mb-4" onClick={openModal}>More Details</button>
         </div>
     );
 }
