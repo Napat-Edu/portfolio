@@ -53,6 +53,11 @@ export const webappLists: ICardLists[] = [
         title: "Overvoice (2022)",
         description: "Entertainment Dubbing App for blind person (Android)",
         bannerImage: "/banners/overvoice-banner.png",
+        sampleVideos: [
+            "https://drive.google.com/file/d/1kD9iIN7HU8xrlSGVasvqvpk-DgfbQUZn/view?usp=sharing",
+            "https://drive.google.com/file/d/1yMoQJ6kFo1yM1xyUySWiFA-1djRpd87m/view?usp=sharing",
+            "https://drive.google.com/file/d/1qXS7VKug0fT0zrHwFe-5hEuw67CLXl76/view?usp=sharing"
+        ],
         sourceCode: [
             "https://github.com/Napat-Edu/Overvoice"
         ],

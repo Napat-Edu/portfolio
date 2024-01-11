@@ -31,8 +31,14 @@ function Dialog(props: IDialogProps) {
 
                             {
                                 props.info.sampleVideos ?
-                                    <div className="mt-2">
-                                        sample videos
+                                    <div className="flex flex-row gap-2 mt-2">
+                                        {
+                                            props.info.sampleVideos.map((sampleVideo, idx) => {
+                                                return (
+                                                    <a className="bg-primary rounded-md px-2 py-1 text-white" href={sampleVideo} target="_blank" key={"sample-video-" + idx}>Sample Video {idx + 1}</a>
+                                                );
+                                            })
+                                        }
                                     </div> :
                                     <></>
                             }
