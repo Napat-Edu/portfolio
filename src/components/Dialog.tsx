@@ -25,18 +25,19 @@ function Dialog(props: IDialogProps) {
                         </div>
                         <h3 className="font-bold text-4xl">{props.info.title}</h3>
 
-                        <p>content</p>
+                        <p className="mt-2" dangerouslySetInnerHTML={{ __html: props.info.detail }}></p>
 
-                        <div>
+                        <div className="mt-2">
                             sample videos
                         </div>
 
-                        <div className="flex flex-row gap-4">
+                        <div className="flex flex-row gap-4 mt-2">
                             {
                                 props.info.sourceCode ?
                                     props.info.sourceCode.map((code, idx) => {
+                                        const shade = 300 + (idx * 100);
                                         return (
-                                            <a key={"src-code-" + idx} href={code} target="_blank" className="rounded-md bg-slate-300 px-2 py-1">
+                                            <a key={"src-code-" + idx} href={code} target="_blank" className={`rounded-md bg-slate-${shade} px-2 py-1`}>
                                                 <img className="w-8 h-8" src="/icons/code-icon.png" alt="source-code" />
                                             </a>
                                         );
@@ -46,16 +47,16 @@ function Dialog(props: IDialogProps) {
                             }
                             {
                                 props.info.webLink ?
-                                    <a href={props.info.webLink} target="_blank" className="rounded-md bg-primary px-4 text-white">
-                                        Visit Website
+                                    <a href={props.info.webLink} target="_blank" className="flex items-center rounded-md min-h-10 bg-primary px-4 text-white">
+                                        <p>Visit Website</p>
                                     </a> :
                                     <></>
                             }
                             {
                                 props.info.sourceFile ?
-                                    <button className="rounded-md bg-green-400 px-4 text-white">
-                                        Download
-                                    </button> :
+                                    <a href={props.info.sourceFile} target="_blank" className="flex items-center min-h-10 rounded-md bg-green-400 px-4 text-white">
+                                        <p>Download</p>
+                                    </a> :
                                     <></>
                             }
                         </div>

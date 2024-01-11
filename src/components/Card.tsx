@@ -23,7 +23,7 @@ function Card(props: ICardList) {
             <div>
                 <img className="w-full h-44 object-cover object-center" src={props.info.bannerImage} alt="xxx" />
                 <div className="px-6 py-2">
-                    <div className="font-bold text-xl mb-2">{props.info.title}</div>
+                    <div className="font-bold text-xl mb-2 truncate">{props.info.title}</div>
                     <p className="text-gray-700 text-base">{props.info.description}</p>
                 </div>
             </div>

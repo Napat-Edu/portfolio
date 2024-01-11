@@ -47,12 +47,23 @@ function App() {
   return (
     <main className="font-medium text-dark-blue">
       <section className="min-h-64 flex">
-        <div className="flex flex-col lg:flex-row justify-between items-center align-middle lg:w-7/12 m-auto">
+        <div className="flex flex-col gap-4 lg:flex-row justify-between items-center align-middle lg:w-7/12 m-auto">
 
-          <div className="flex flex-col">
+          <div className="flex flex-col items-center lg:items-start">
             <p>Hello world, I am</p>
             <p className="text-5xl font-bold mb-4">Napat Wareedee</p>
             <p>Dreams to become software engineer</p>
+            <div className="flex flex-row gap-2 my-1">
+              <a href="https://www.linkedin.com/in/napat-wareedee-5b10a5254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" className="w-8 h-8">
+                <img src="/icons/linkedin-icon.png" alt="linkedin-icon" />
+              </a>
+              <a href="https://github.com/Napat-Edu" target="_blank" className="w-8 h-8">
+                <img src="/icons/github-icon.png" alt="github-icon" />
+              </a>
+              <a href="mailto:napat.wrd@gmail.com" className="w-8 h-8">
+                <img src="/icons/email-icon.png" alt="email-icon" />
+              </a>
+            </div>
           </div>
 
           <img src="pat-profile.jpg" className="border-0 rounded-full w-36 h-36 object-cover" />
