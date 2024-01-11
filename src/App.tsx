@@ -80,11 +80,7 @@ function App() {
             return (
               <Card
                 key={"project-card" + idx}
-                title={card.title}
-                description={card.description}
-                bannerImage={card.bannerImage}
-                webLink={card.webLink}
-                sourceCode={card.sourceCode}
+                info={card}
               />
             );
           })}
