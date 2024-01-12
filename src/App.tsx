@@ -14,7 +14,7 @@ function App() {
 
   const [projectButtonLists, setProjectButtonLists] = useState([
     {
-      title: "Web",
+      title: "Web / App",
       isActive: true,
       projects: webappLists
     },
@@ -78,7 +78,7 @@ function App() {
             return (
               <button
                 key={"project-type-btn-" + idx}
-                className={`border-2 rounded-xl px-4 ${projectButton.isActive === true ? "text-slate-800 border-slate-700" : "text-slate-400 border-slate-300"}`}
+                className={`w-28 border-2 rounded-xl px-2 ${projectButton.isActive === true ? "text-slate-800 border-slate-700" : "text-slate-400 border-slate-300"}`}
                 onClick={() => { handleClickProject(projectButton) }}
               >
                 {projectButton.title}
