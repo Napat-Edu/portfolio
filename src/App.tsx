@@ -63,7 +63,7 @@ function App() {
       </section>
 
       <section className="w-4/5 lg:w-7/12 mx-auto my-8">
-        <h2 className="font-bold text-2xl">Projects</h2>
+        <h2 className="font-bold text-2xl flex justify-center lg:justify-normal">Projects</h2>
         <div className="flex flex-row justify-center gap-4">
           {projectButtonLists.map((projectButton, idx) => {
             return (
@@ -77,7 +77,7 @@ function App() {
             );
           })}
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 my-2">
+        <div className="fade-in grid grid-cols-1 lg:grid-cols-3 gap-4 my-2">
           {projectLists.map((card, idx) => {
             return (
               <Card
@@ -90,7 +90,7 @@ function App() {
       </section>
 
       <section className="w-4/5 lg:w-7/12 mx-auto my-8">
-        <h2 className="font-bold text-2xl">Experiences</h2>
+        <h2 className="font-bold text-2xl flex justify-center lg:justify-normal">Experiences</h2>
         <div className="flex flex-col mt-2">
 
           <div className="flex flex-row mb-2">
@@ -111,7 +111,7 @@ function App() {
       </section>
 
       <section className="w-4/5 lg:w-7/12 mx-auto lg:my-8">
-        <h2 className="font-bold text-2xl">Awards & Certificates</h2>
+        <h2 className="font-bold text-2xl flex justify-center lg:justify-normal">Awards & Certificates</h2>
         <div className="-my-2">
           <Timeline
             title="The Winner & Best Design in New Founder 2023 by Young Entrepreneur Assembly Hub (YEAH)"
@@ -125,8 +125,8 @@ function App() {
       </section>
 
       <section className="w-4/5 lg:w-7/12 mx-auto my-8">
-        <h2 className="font-bold text-2xl mb-2">Skills</h2>
-        <h3 className="font-semibold text-lg mb-2">Language</h3>
+        <h2 className="font-bold text-2xl mb-2 flex justify-center lg:justify-normal">Skills</h2>
+        <h3 className="font-semibold text-lg mb-2 flex justify-center lg:justify-normal">Language</h3>
         <div className="grid grid-cols-3 lg:grid-cols-6 mx-auto lg:mx-0 gap-4 items-center w-1/2 mb-2">
           {languageLists.map((language, idx) => {
             return (
@@ -134,7 +134,7 @@ function App() {
             );
           })}
         </div>
-        <h3 className="font-semibold text-lg mb-2">Tools</h3>
+        <h3 className="font-semibold text-lg mb-2 flex justify-center lg:justify-normal">Tools</h3>
         <div
           className="grid grid-cols-3 items-center w-4/6 mx-auto mb-2 gap-4
           lg:grid-cols-11 lg:w-full"
