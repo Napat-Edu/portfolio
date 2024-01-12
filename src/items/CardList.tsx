@@ -84,6 +84,9 @@ export const gameLists: ICardLists[] = [
         sourceCode: [
             "https://github.com/Napat-Edu/TyBunTee"
         ],
+        sampleVideos: [
+            "https://drive.google.com/file/d/1Jd6zPyoHnYEF3SQIwgGGtDvsNyqIbyum/view?usp=sharing"
+        ],
         sourceFile: "https://drive.google.com/file/d/10jbptWt-lumzH5b7GMA8lmxmZ9_MrbF2/view?usp=sharing",
         detail: `
         CPE467 Game Design project <br>
@@ -102,6 +105,9 @@ export const gameLists: ICardLists[] = [
         description: "Endless runner game for blood donation campaign",
         bannerImage: "/banners/run-for-blood-banner.png",
         sourceFile: "https://drive.google.com/file/d/1NOjlNEwj8x6AmSRV_-b37FHPwxTFy9fP/view?usp=drive_link",
+        sampleVideos: [
+            "https://drive.google.com/file/d/1m15T_d5Xgclc3LTbWG7Xu6CxSwxVFvCN/view?usp=sharing"
+        ],
         detail: `
         Mini project (this project was created to participate in blood donation campaign) <br>
         responsible as team lead and developer. <br>
