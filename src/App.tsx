@@ -3,6 +3,7 @@ import Card from "./components/Card"
 import Timeline from "./components/Timeline"
 import { ICardLists, gameLists, webappLists } from "./items/CardList";
 import { languageLists, toolLists } from "./items/ImageList";
+import ContactList from "./components/ContactList";
 
 interface IButton {
   title: string;
@@ -52,18 +53,8 @@ function App() {
           <div className="flex flex-col items-center lg:items-start">
             <p>Hello world, I am</p>
             <p className="text-5xl font-bold mb-4">Napat Wareedee</p>
-            <p>Dreams to become software engineer</p>
-            <div className="flex flex-row gap-2 my-1">
-              <a href="https://www.linkedin.com/in/napat-wareedee-5b10a5254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" className="w-8 h-8">
-                <img src="/icons/linkedin-icon.png" alt="linkedin-icon" />
-              </a>
-              <a href="https://github.com/Napat-Edu" target="_blank" className="w-8 h-8">
-                <img src="/icons/github-icon.png" alt="github-icon" />
-              </a>
-              <a href="mailto:napat.wrd@gmail.com" className="w-8 h-8">
-                <img src="/icons/email-icon.png" alt="email-icon" />
-              </a>
-            </div>
+            <p className="mb-1">Dreams to become software engineer</p>
+            <ContactList />
           </div>
 
           <img src="pat-profile.jpg" className="border-0 rounded-full w-36 h-36 object-cover" />
@@ -158,17 +149,7 @@ function App() {
 
       <footer className="flex flex-col gap-4 justify-center items-center bg-primary text-white mt-4 p-6">
         <p>Napat Wareedee</p>
-        <div className="flex flex-row gap-2">
-          <a href="https://www.linkedin.com/in/napat-wareedee-5b10a5254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" className="w-8 h-8">
-            <img src="/icons/linkedin-icon.png" alt="linkedin-icon" />
-          </a>
-          <a href="https://github.com/Napat-Edu" target="_blank" className="w-8 h-8">
-            <img src="/icons/github-icon.png" alt="github-icon" />
-          </a>
-          <a href="mailto:napat.wrd@gmail.com" className="w-8 h-8">
-            <img src="/icons/email-icon.png" alt="email-icon" />
-          </a>
-        </div>
+        <ContactList />
       </footer>
     </main>
   )
