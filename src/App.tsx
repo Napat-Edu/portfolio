@@ -42,7 +42,7 @@ function App() {
         }
       }
     }));
-    setProjectLists(selectedButton.projects);
+    setProjectLists([...selectedButton.projects]);
   }
 
   return (
@@ -77,11 +77,11 @@ function App() {
             );
           })}
         </div>
-        <div className="fade-in grid grid-cols-1 lg:grid-cols-3 gap-4 my-2">
+        <div className="flex flex-row flex-wrap justify-center gap-4 my-2">
           {projectLists.map((card, idx) => {
             return (
               <Card
-                key={"project-card" + idx}
+                key={"project-card-" + card.title + idx}
                 info={card}
               />
             );

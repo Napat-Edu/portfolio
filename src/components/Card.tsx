@@ -19,7 +19,7 @@ function Card(props: ICardList) {
     };
 
     return (
-        <div className="max-w-72 rounded-lg overflow-hidden shadow-md flex flex-col justify-between mx-auto">
+        <div className="fade-in min-w-56 max-w-64 rounded-lg overflow-hidden shadow-md flex flex-col justify-between">
             <div>
                 <img className="w-full h-44 object-cover object-center" src={props.info.bannerImage} alt={"banner-" + props.info.title} />
                 <div className="px-6 py-2">
