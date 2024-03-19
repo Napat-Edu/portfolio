@@ -15,7 +15,7 @@ export const webappLists: ICardLists[] = [
         title: "Compath (now in development)",
         description: "Web-app with resume classification for CPE students to recommend their career path",
         bannerImage: "/banners/compath-banner.png",
-        webLink: "https://compath-xwngxoqc2q-wl.a.run.app/",
+        webLink: "https://compath-qc72cy7wuq-as.a.run.app/",
         sourceCode: [
             "https://github.com/Napat-Edu/compath-client",
             "https://github.com/Napat-Edu/compath-server"
