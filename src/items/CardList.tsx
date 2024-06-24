@@ -12,10 +12,10 @@ export interface ICardLists {
 
 export const webappLists: ICardLists[] = [
     {
-        title: "Compath (now in development)",
+        title: "Compath",
         description: "Web-app with resume classification for CPE students to recommend their career path",
         bannerImage: "/banners/compath-banner.png",
-        webLink: "https://compath-qc72cy7wuq-as.a.run.app/",
+        webLink: "https://compath-cpe.web.app/",
         sourceCode: [
             "https://github.com/Napat-Edu/compath-client",
             "https://github.com/Napat-Edu/compath-server"
