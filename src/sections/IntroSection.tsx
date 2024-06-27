@@ -8,7 +8,7 @@ export default function IntroSection() {
 
     return (
         <section>
-            <div className="flex flex-col gap-8 lg:flex-row justify-between items-center lg:w-7/12 mx-auto">
+            <div className="flex flex-col items-center gap-8 lg:flex-row justify-between">
 
                 <div className="flex flex-col items-center lg:items-start gap-2 animate-fade-right animate-once animate-ease-out">
                     <p>Hello world, I am</p>
