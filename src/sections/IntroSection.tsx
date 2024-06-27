@@ -17,11 +17,20 @@ export default function IntroSection() {
                     <ContactList />
                 </div>
 
-                <img
-                    src="pat-profile.jpg"
-                    onClick={rickRoll}
-                    className="border-0 rounded-full w-36 h-36 cursor-pointer object-cover animate-fade-left animate-once animate-ease-out"
-                />
+                <div className="relative w-36 h-36">
+                    <img
+                        src="pat-profile.jpg"
+                        onClick={rickRoll}
+                        className={`
+                            absolute z-10 border-0 rounded-full w-36 h-36 cursor-pointer object-cover 
+                            animate-fade-left animate-once animate-ease-out
+                        `}
+                    />
+                    <span className={`
+                        absolute z-0 h-full w-full rounded-full bg-light-orange 
+                        opacity-75 animate-ping animate-twice animate-delay-1000 animate-ease-out animate-fill-both`
+                    }/>
+                </div>
 
             </div>
         </section>
