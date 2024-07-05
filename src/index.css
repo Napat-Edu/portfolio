@@ -7,11 +7,23 @@
     @apply text-dark-blue text-3xl lg:text-5xl font-bold;
   }
 
+  h2 {
+    @apply text-dark-blue text-2xl lg:text-4xl font-semibold;
+  }
+
+  h3 {
+    @apply text-dark-blue text-lg lg:text-xl font-semibold;
+  }
+
   p {
-    @apply text-dark-blue text-sm lg:text-lg font-medium;
+    @apply text-dark-blue text-sm lg:text-base font-medium;
   }
 
   section {
     @apply my-4 w-full lg:w-7/12 mx-auto;
+  }
+
+  button {
+    @apply bg-primary rounded-md px-4 py-1 text-white hover:opacity-80;
   }
 }
