@@ -11,9 +11,9 @@ export default function IntroSection() {
             <div className="flex flex-col items-center gap-8 lg:flex-row justify-between">
 
                 <div className="flex flex-col items-center lg:items-start gap-2 animate-fade-right animate-once animate-ease-out">
-                    <p>Hello world, I am</p>
+                    <h3>Hello world, I am</h3>
                     <h1>Napat Wareedee</h1>
-                    <p>Dreams to become software engineer</p>
+                    <h3>Dreams to become software engineer</h3>
                     <ContactList />
                 </div>
 
