@@ -13,7 +13,6 @@ interface ICard {
 }
 
 export function Card(props: ICard) {
-    const unselectedStyle = 'opacity-50 shadow-none hover:shadow-none hover:outline-2 hover:border-slate-400 translate-y-3';
 
     const handleCardClick = (index: number) => {
         if (props.onClick) {
@@ -25,9 +24,10 @@ export function Card(props: ICard) {
         <div
             className={`
                 w-64 h-full border rounded-2xl overflow-hidden 
-                shadow-md hover:shadow-xl transition-shadow
+                shadow-md hover:shadow-xl transition-transform
                 ${props.className || ''}
-                ${props.isSelected ? '' : unselectedStyle}
+                ${!props.isSelected && 'opacity-50 shadow-none hover:shadow-none hover:outline-2 hover:border-slate-400 translate-y-3'}
+                duration-300
             `}
             onClick={() => {
                 handleCardClick(props.cardIdx!);
@@ -62,7 +62,7 @@ interface ICardContainer {
 }
 
 export function CardContainer(props: ICardContainer) {
-    const [focusCard, serFocusCard] = useState<number>(0);
+    const [focusCard, serFocusCard] = useState<number>(Math.floor(Children.count(props.children) / 2));
 
     const handleClick = (index: number) => {
         serFocusCard(index);
