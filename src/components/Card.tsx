@@ -24,7 +24,7 @@ export function Card(props: ICard) {
         <div
             className={`
                 w-64 h-full border rounded-2xl overflow-hidden 
-                shadow-md hover:shadow-xl transition-transform
+                shadow-sm hover:shadow transition-transform
                 ${props.className || ''}
                 ${!props.isSelected && 'opacity-50 shadow-none hover:shadow-none hover:outline-2 hover:border-slate-400 translate-y-3'}
                 duration-300
@@ -80,23 +80,25 @@ export function CardContainer(props: ICardContainer) {
     };
 
     return (
-        <div
-            className={`
-                flex justify-center gap-10 min-h-fit 
+        <div className='absolute left-0 right-0 w-screen overflow-x-hidden'>
+            <div
+                className={`
+                flex justify-center gap-28 py-4 min-h-fit
                 transition-transform duration-500
             `}
-            style={{ transform: `translateX(${translatePercentage}%)` }}
-        >
-            {Children.map(props.children, (child, childIdx) => {
-                if (isValidElement(child)) {
-                    return cloneElement(child as ReactElement<ICard>, {
-                        onClick: handleClick,
-                        cardIdx: childIdx,
-                        isSelected: focusCard == childIdx
-                    });
-                }
-                return child;
-            })}
+                style={{ transform: `translateX(${translatePercentage}%)` }}
+            >
+                {Children.map(props.children, (child, childIdx) => {
+                    if (isValidElement(child)) {
+                        return cloneElement(child as ReactElement<ICard>, {
+                            onClick: handleClick,
+                            cardIdx: childIdx,
+                            isSelected: focusCard == childIdx
+                        });
+                    }
+                    return child;
+                })}
+            </div>
         </div>
     );
 }
