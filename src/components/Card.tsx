@@ -23,7 +23,7 @@ export function Card(props: ICard) {
     return (
         <div
             className={`
-                w-64 h-full border rounded-2xl overflow-hidden 
+                min-w-64 max-w-64 h-full border rounded-2xl overflow-hidden 
                 shadow-sm hover:shadow transition-transform
                 ${props.className || ''}
                 ${!props.isSelected && 'opacity-50 shadow-none hover:shadow-none hover:outline-2 hover:border-slate-400 translate-y-3'}
@@ -75,7 +75,7 @@ export function CardContainer(props: ICardContainer) {
 
     const calculateTranslation = (index: number) => {
         const diff = centerCard - index;
-        const translatePercentage = (100 / cardCount) * diff;
+        const translatePercentage = ((100 / cardCount) + (cardCount - 1)) * diff;
         setTranslatePercentage(translatePercentage);
     };
 
