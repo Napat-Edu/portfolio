@@ -15,7 +15,7 @@ interface ICard {
 export function Card(props: ICard) {
 
     const handleCardClick = (index: number) => {
-        if (props.onClick) {
+        if (props.onClick && !props.isSelected) {
             props.onClick(index);
         }
     };
@@ -62,17 +62,30 @@ interface ICardContainer {
 }
 
 export function CardContainer(props: ICardContainer) {
-    const [focusCard, serFocusCard] = useState<number>(Math.floor(Children.count(props.children) / 2));
+    const cardCount = Children.count(props.children);
+    const centerCard = Math.floor(cardCount / 2);
+
+    const [focusCard, serFocusCard] = useState<number>(centerCard);
+    const [translatePercentage, setTranslatePercentage] = useState<number>(0);
 
     const handleClick = (index: number) => {
         serFocusCard(index);
+        calculateTranslation(index);
+    };
+
+    const calculateTranslation = (index: number) => {
+        const diff = centerCard - index;
+        const translatePercentage = (100 / cardCount) * diff;
+        setTranslatePercentage(translatePercentage);
     };
 
     return (
         <div
             className={`
-                flex justify-center gap-10 min-h-fit
+                flex justify-center gap-10 min-h-fit 
+                transition-transform duration-500
             `}
+            style={{ transform: `translateX(${translatePercentage}%)` }}
         >
             {Children.map(props.children, (child, childIdx) => {
                 if (isValidElement(child)) {
