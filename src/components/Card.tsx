@@ -9,6 +9,7 @@ interface ICard {
     cardIdx?: number;
     isSelected?: boolean;
     className?: string;
+    translate?: number;
     onClick?: (index: number) => void;
 }
 
@@ -23,12 +24,18 @@ export function Card(props: ICard) {
     return (
         <div
             className={`
-                min-w-64 max-w-64 h-full border rounded-2xl overflow-hidden 
+                flex flex-col w-full h-full absolute border rounded-2xl overflow-hidden 
                 shadow-sm hover:shadow transition-transform
                 ${props.className || ''}
                 ${!props.isSelected && 'opacity-50 shadow-none hover:shadow-none hover:outline-2 hover:border-slate-400 translate-y-3'}
                 duration-300
             `}
+            style={{
+                transform: `translate(${props.translate || 0}%, ${props.isSelected ? '0px' : '2%'})`,
+                translate: 'none',
+                rotate: 'none',
+                scale: 'none'
+            }}
             onClick={() => {
                 handleCardClick(props.cardIdx!);
             }}
@@ -48,9 +55,14 @@ export function Card(props: ICard) {
                     }
                 </div>
                 <p>{props.description}</p>
-                <div className='flex gap-2 mt-4'>
-                    <button className='min-w-fit px-2'>{`</>`}</button>
-                    <button className='w-4/5'>Visit</button>
+                <div className='flex flex-wrap mt-4'>
+                    <Badge theme='dark'>Frontend code</Badge>
+                    <Badge theme='dark'>Backend code</Badge>
+                    <Badge theme='dark'>Download</Badge>
+                </div>
+                <div className='flex gap-2'>
+                    <button className='basis-1/2'>Sample</button>
+                    <button className='basis-1/2'>Visit</button>
                 </div>
             </div>
         </div>
@@ -66,39 +78,35 @@ export function CardContainer(props: ICardContainer) {
     const centerCard = Math.floor(cardCount / 2);
 
     const [focusCard, serFocusCard] = useState<number>(centerCard);
-    const [translatePercentage, setTranslatePercentage] = useState<number>(0);
 
     const handleClick = (index: number) => {
         serFocusCard(index);
         calculateTranslation(index);
     };
 
-    const calculateTranslation = (index: number) => {
-        const diff = centerCard - index;
-        const translatePercentage = ((100 / cardCount) + (cardCount - 1)) * diff;
-        setTranslatePercentage(translatePercentage);
+    const calculateTranslation = (newFocusIndex: number) => {
+        const diffFromFocus = newFocusIndex - focusCard;
+        return ((diffFromFocus) * 125);
     };
 
     return (
-        <div className='absolute left-0 right-0 w-screen overflow-x-hidden'>
-            <div
-                className={`
-                flex justify-center gap-28 py-4 min-h-fit
+        <div
+            className={`
+                relative w-72 h-96 max-w-full flex justify-center py-4
                 transition-transform duration-500
             `}
-                style={{ transform: `translateX(${translatePercentage}%)` }}
-            >
-                {Children.map(props.children, (child, childIdx) => {
-                    if (isValidElement(child)) {
-                        return cloneElement(child as ReactElement<ICard>, {
-                            onClick: handleClick,
-                            cardIdx: childIdx,
-                            isSelected: focusCard == childIdx
-                        });
-                    }
-                    return child;
-                })}
-            </div>
+        >
+            {Children.map(props.children, (child, childIdx) => {
+                if (isValidElement(child)) {
+                    return cloneElement(child as ReactElement<ICard>, {
+                        onClick: handleClick,
+                        cardIdx: childIdx,
+                        isSelected: focusCard == childIdx,
+                        translate: calculateTranslation(childIdx)
+                    });
+                }
+                return child;
+            })}
         </div>
     );
 }
