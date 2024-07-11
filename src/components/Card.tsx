@@ -92,7 +92,7 @@ export function CardContainer(props: ICardContainer) {
     return (
         <div
             className={`
-                relative w-72 h-96 max-w-full flex justify-center py-4
+                relative w-96 h-[32rem] max-w-full flex justify-center py-4
                 transition-transform duration-500
             `}
         >
