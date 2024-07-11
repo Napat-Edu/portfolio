@@ -28,7 +28,7 @@ export function Card(props: ICard) {
                 shadow-sm hover:shadow transition-transform
                 ${props.className || ''}
                 ${!props.isSelected && 'opacity-50 shadow-none hover:shadow-none hover:outline-2 hover:border-slate-400 translate-y-3'}
-                duration-300
+                duration-500
             `}
             style={{
                 transform: `translate(${props.translate || 0}%, ${props.isSelected ? '0px' : '2%'})`,
