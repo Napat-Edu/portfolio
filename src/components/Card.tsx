@@ -1,11 +1,21 @@
 import { Children, cloneElement, isValidElement, ReactNode, ReactElement, useState } from 'react';
 import Badge from './Badge';
 
+interface ISource {
+    label: string;
+    url: string;
+}
+
 interface ICard {
     title: string;
     description: string;
     image: string;
     tools: string[];
+    sources?: ISource[];
+    url?: {
+        sample?: string;
+        visit?: string;
+    };
     cardIdx?: number;
     isSelected?: boolean;
     className?: string;
@@ -25,7 +35,7 @@ export function Card(props: ICard) {
         <div
             className={`
                 flex flex-col w-full h-full absolute border rounded-2xl overflow-hidden 
-                shadow-sm hover:shadow transition-transform
+                shadow-sm hover:shadow transition-transform hover:cursor-pointer
                 ${props.className || ''}
                 ${!props.isSelected && 'opacity-50 shadow-none hover:shadow-none hover:outline-2 hover:border-slate-400 translate-y-3'}
                 duration-500
@@ -45,7 +55,7 @@ export function Card(props: ICard) {
                 alt="project banner image"
                 className={`w-full h-1/2 object-cover object-center`}
             />
-            <div className='flex flex-col gap-1 p-4'>
+            <div className='flex flex-col h-full gap-1 p-4'>
                 <h3>{props.title}</h3>
                 <div className='flex flex-wrap gap-1'>
                     {
@@ -54,15 +64,27 @@ export function Card(props: ICard) {
                         })
                     }
                 </div>
-                <p>{props.description}</p>
-                <div className='flex flex-wrap mt-4'>
-                    <Badge theme='dark'>Frontend code</Badge>
-                    <Badge theme='dark'>Backend code</Badge>
-                    <Badge theme='dark'>Download</Badge>
-                </div>
-                <div className='flex gap-2'>
-                    <button className='basis-1/2'>Sample</button>
-                    <button className='basis-1/2'>Visit</button>
+                <p className='py-1'>{props.description}</p>
+                <div className='flex flex-col h-full gap-1 justify-end'>
+                    <div className='flex flex-wrap mt-4'>
+                        {
+                            props.sources?.map((source) => {
+                                return (
+                                    <Badge
+                                        url={source.url}
+                                        theme='dark'
+                                        key={`${props.title}-${source.label}-badge`}
+                                    >
+                                        {source.label}
+                                    </Badge>
+                                );
+                            })
+                        }
+                    </div>
+                    <div className='flex gap-2'>
+                        {props.url?.sample && <a className='bg-primary w-full text-center rounded-md px-4 py-1 text-white hover:opacity-80' href={props.url.sample} target='_blank'>Sample</a>}
+                        {props.url?.visit && <a className='bg-primary w-full text-center rounded-md px-4 py-1 text-white hover:opacity-80' href={props.url.visit} target='_blank'>Visit</a>}
+                    </div>
                 </div>
             </div>
         </div>
@@ -92,7 +114,7 @@ export function CardContainer(props: ICardContainer) {
     return (
         <div
             className={`
-                relative w-96 h-[32rem] max-w-full flex justify-center py-4
+                relative w-96 h-[30rem] max-w-full flex justify-center py-4
                 transition-transform duration-500
             `}
         >

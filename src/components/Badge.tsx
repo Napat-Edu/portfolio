@@ -5,6 +5,7 @@ type ThemeType = 'light' | 'dark';
 interface IBadge {
     theme?: ThemeType;
     children?: ReactNode;
+    url?: string;
 }
 
 export default function Badge(props: IBadge) {
@@ -19,9 +20,9 @@ export default function Badge(props: IBadge) {
     };
 
     return (
-        <div className={`
+        <a href={props.url} target="_blank" className={`
             border-2 rounded-2xl w-fit px-2
             text-sm ${handleTheme()}
-        `}>{props.children}</div>
+        `}>{props.children}</a>
     );
 }
