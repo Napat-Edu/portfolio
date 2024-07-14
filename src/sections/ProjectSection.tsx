@@ -2,7 +2,7 @@ import { Card, CardContainer } from '../components/Card';
 export default function ProjectSection() {
 
     return (
-        <section className='abosolute w-full min-h-fit flex flex-col py-8 justify-center items-center overflow-x-hidden'>
+        <section className='abosolute w-full min-h-fit flex flex-col py-8 justify-center items-center overflow-x-hidden animate-fade-up'>
             <h2 className='text-center'>Projects</h2>
             <CardContainer>
                 <Card
