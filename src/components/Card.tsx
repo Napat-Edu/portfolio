@@ -102,8 +102,10 @@ export function CardContainer(props: ICardContainer) {
     const [focusCard, serFocusCard] = useState<number>(centerCard);
 
     const handleClick = (index: number) => {
-        serFocusCard(index);
-        calculateTranslation(index);
+        if (index >= 0 && index < cardCount) {
+            serFocusCard(index);
+            calculateTranslation(index);
+        }
     };
 
     const calculateTranslation = (newFocusIndex: number) => {
@@ -130,6 +132,10 @@ export function CardContainer(props: ICardContainer) {
                     }
                     return child;
                 })}
+            </div>
+            <div className='flex gap-4 mt-8'>
+                <button onClick={() => { handleClick(focusCard - 1) }} disabled={focusCard == 0}><img src="/icons/left-arrow.svg" alt="left arrow" /></button>
+                <button onClick={() => { handleClick(focusCard + 1) }} disabled={focusCard == cardCount - 1}><img src="/icons/right-arrow.svg" alt="right arrow" /></button>
             </div>
         </>
     );

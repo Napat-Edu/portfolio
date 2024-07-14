@@ -53,7 +53,8 @@ export default function ProjectSection() {
                     ]}
                     tools={['Unity', 'C#']}
                     url={{
-                        sample: 'https://drive.google.com/file/d/1Jd6zPyoHnYEF3SQIwgGGtDvsNyqIbyum/view?usp=sharing'
+                        sample: 'https://drive.google.com/file/d/1Jd6zPyoHnYEF3SQIwgGGtDvsNyqIbyum/view?usp=sharing',
+                        visit: 'https://omegy.itch.io/tybuntee'
                     }}
                 />
                 <Card
