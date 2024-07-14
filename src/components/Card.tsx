@@ -112,23 +112,25 @@ export function CardContainer(props: ICardContainer) {
     };
 
     return (
-        <div
-            className={`
-                relative w-96 h-[30rem] max-w-full flex justify-center py-4
+        <>
+            <div
+                className={`
+                relative w-72 sm:w-96 h-[30rem] max-w-full flex justify-center py-4
                 transition-transform duration-500
             `}
-        >
-            {Children.map(props.children, (child, childIdx) => {
-                if (isValidElement(child)) {
-                    return cloneElement(child as ReactElement<ICard>, {
-                        onClick: handleClick,
-                        cardIdx: childIdx,
-                        isSelected: focusCard == childIdx,
-                        translate: calculateTranslation(childIdx)
-                    });
-                }
-                return child;
-            })}
-        </div>
+            >
+                {Children.map(props.children, (child, childIdx) => {
+                    if (isValidElement(child)) {
+                        return cloneElement(child as ReactElement<ICard>, {
+                            onClick: handleClick,
+                            cardIdx: childIdx,
+                            isSelected: focusCard == childIdx,
+                            translate: calculateTranslation(childIdx)
+                        });
+                    }
+                    return child;
+                })}
+            </div>
+        </>
     );
 }
