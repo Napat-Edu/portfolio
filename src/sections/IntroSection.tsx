@@ -1,6 +1,6 @@
 import ContactList from "../components/ContactList";
 
-export default function IntroSection() {
+export default function HeaderSection() {
 
     const rickRoll = () => {
         window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
