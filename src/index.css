@@ -26,4 +26,8 @@
   button {
     @apply bg-primary rounded-md px-4 py-1 text-white hover:opacity-80 disabled:opacity-50;
   }
+
+  strong {
+    @apply font-semibold;
+  }
 }
