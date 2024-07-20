@@ -1,6 +1,7 @@
-import HeaderSection from './sections/IntroSection';
+import HeaderSection from './sections/HeaderSection';
 import ProjectSection from './sections/ProjectSection';
 import HistorySection from './sections/HistorySection';
+import IntroSection from './sections/IntroSection';
 
 function App() {
 
@@ -8,10 +9,11 @@ function App() {
     <>
       <main className='py-12'>
         <HeaderSection></HeaderSection>
+        <IntroSection></IntroSection>
         <ProjectSection></ProjectSection>
         <HistorySection></HistorySection>
       </main>
-      <footer className='bg-primary h-32'></footer>
+      <footer className='bg-primary h-56'></footer>
     </>
   );
 }
