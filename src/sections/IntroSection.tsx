@@ -5,7 +5,7 @@ export default function IntroSection() {
             <h2 className='text-center'>Who Am I?</h2>
             <h3 className="text-center mb-4">I have two sides</h3>
             <div className="w-full h-fit px-4 lg:px-0">
-                <div className="grid grid-cols-1 lg:grid-cols-2 border-2 rounded-md divide-y-2 lg:divide-x-2 w-full h-full">
+                <div className="grid grid-cols-1 lg:grid-cols-2 border-2 rounded-md divide-y-2 lg:divide-y-0 lg:divide-x-2 w-full h-full">
                     <div className="flex flex-col items-center justify-center bg-white lg:rounded-l-md py-4">
                         <img className="mx-auto w-12 h-auto" src="game-controller.png" alt="game controller icon" />
                         <h3>Gamer Side</h3>
