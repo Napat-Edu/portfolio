@@ -4,14 +4,24 @@ export default function IntroSection() {
         <section className="animate-fade-up">
             <h2 className='text-center'>Who Am I?</h2>
             <h3 className="text-center mb-4">I have two sides</h3>
-            <div className="w-full h-96 px-4 lg:px-0">
+            <div className="w-full h-[400px] px-4 lg:px-0">
                 <div className="grid grid-cols-2 border-2 rounded-md divide-x-2 w-full h-full">
-                    <button className="bg-white rounded-r-none hover:bg-slate-100 duration-300">
+                    <div className="flex flex-col items-center justify-center bg-white rounded-l-md">
+                        <img className="mx-auto w-12 h-auto" src="game-controller.png" alt="game controller icon" />
                         <h3>Gamer Side</h3>
-                    </button>
-                    <button className="bg-white rounded-l-none hover:bg-slate-100 duration-300">
+                        <p>Of course I love games!</p>
+                        <br />
+                        <p>I'm a Kingdom Hearts and Final Fantasy fans!</p>
+                        <img className="w-4/5 h-52 mt-1 rounded-md object-cover" src="playstation-demo.jpg" alt="my playstation game image" />
+                    </div>
+                    <div className="flex flex-col items-center justify-center bg-white rounded-r-md">
+                        <img className="mx-auto w-12 h-auto" src="books.png" alt="books icon" />
                         <h3>Edacator Side</h3>
-                    </button>
+                        <p>Of course I love to learn and teaching!</p>
+                        <br />
+                        <p>Try new things and share it is fun, right?</p>
+                        <img className="w-4/5 h-52 mt-1 rounded-md object-cover object-bottom" src="teaching-demo.jpg" alt="my learn and teaching image" />
+                    </div>
                 </div>
             </div>
             <div className="flex flex-wrap mt-2 gap-1 px-4 lg:px-0">
