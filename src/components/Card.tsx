@@ -65,7 +65,7 @@ export function Card(props: ICard) {
                     }
                 </div>
                 <p className='py-1'>{props.description}</p>
-                <div className='flex flex-col h-full gap-1 justify-end'>
+                <div className={`flex flex-col h-full gap-1 justify-end ${!props.isSelected ? 'pointer-events-none' : ''}`}>
                     <div className='flex flex-wrap mt-4'>
                         {
                             props.sources?.map((source) => {
@@ -82,8 +82,24 @@ export function Card(props: ICard) {
                         }
                     </div>
                     <div className='flex gap-2'>
-                        {props.url?.sample && <a className='bg-primary w-full text-center rounded-md px-4 py-1 text-white hover:opacity-80' href={props.url.sample} target='_blank'>Sample</a>}
-                        {props.url?.visit && <a className='bg-primary w-full text-center rounded-md px-4 py-1 text-white hover:opacity-80' href={props.url.visit} target='_blank'>Visit</a>}
+                        {
+                            props.url?.sample &&
+                            <a
+                                className={`bg-primary w-full text-center rounded-md px-4 py-1 text-white hover:opacity-80`}
+                                href={props.url.sample}
+                                target='_blank'>
+                                Sample
+                            </a>
+                        }
+                        {
+                            props.url?.visit &&
+                            <a
+                                className='bg-primary w-full text-center rounded-md px-4 py-1 text-white hover:opacity-80'
+                                href={props.url.visit}
+                                target='_blank'>
+                                Visit
+                            </a>
+                        }
                     </div>
                 </div>
             </div>
