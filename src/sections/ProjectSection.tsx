@@ -14,7 +14,7 @@ export default function ProjectSection() {
                         { label: 'code', url: 'https://github.com/Napat-Edu/Overvoice' }
                     ]}
                     url={{
-                        sample: 'https://drive.google.com/file/d/1kD9iIN7HU8xrlSGVasvqvpk-DgfbQUZn/view?usp=sharing'
+                        sample: 'https://drive.google.com/drive/folders/1Myyr1PxcNAuYlxBvCcejaTz0DbAzHe_7?usp=sharing'
                     }}
                 />
                 <Card
