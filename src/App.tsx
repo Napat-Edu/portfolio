@@ -2,6 +2,7 @@ import HeaderSection from './sections/HeaderSection';
 import ProjectSection from './sections/ProjectSection';
 import HistorySection from './sections/HistorySection';
 import IntroSection from './sections/IntroSection';
+import Footer from './sections/Footer';
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
         <ProjectSection></ProjectSection>
         <HistorySection></HistorySection>
       </main>
-      <footer className='bg-primary h-56'></footer>
+      <Footer></Footer>
     </>
   );
 }
